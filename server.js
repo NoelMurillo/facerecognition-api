@@ -26,38 +26,10 @@ const app= express();
 
 app.use(bodyParser.json());
 app.use(cors());
-const databes = {
-  users: [
-    {
-      id: '123',
-      name: 'Juan',
-      email: 'Jumaro@gmail.com',
-      password: '1233',
-      entries: 0,
-      joined: new Date()
-    },
-    {
-      id: '122',
-      name: 'Pale',
-      email: 'Palero@gmail.com',
-      password: '123we3',
-      entries: 0,
-      joined: new Date()
-    }
-  ],
-  login:[
-    {
-      id: '197 ',
-      hash: '',
-      email: 'Jumaro@gmail.com'
-    }
-  ]
-}
-
 
 
 app.get('/', (req, res)=>{
-  res.send(databes.users)
+  res.send('It is working!')
 });
 
 app.post('/signin', (req, res)=>{ signin.handleSignin(req, res, db, bcrypt)} );
