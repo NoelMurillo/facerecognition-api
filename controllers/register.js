@@ -2,6 +2,7 @@
 const handleRegister = (req, res, db, bcrypt) => {
   const { email, name, password } = req.body;
   if (!email || !name || !password) {
+    alert('Need to fill fields')
     return res.status(400).json('Incorrect submssion, need to fill fields.');
   }
   const hash = bcrypt.hashSync(password);
